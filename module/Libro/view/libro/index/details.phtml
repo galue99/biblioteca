@@ -1,0 +1,27 @@
+<div class="row">
+        <div class="col-md-12" style="">                
+            <div class="jumbotron">
+                <h1 style="display:inline-block;">"<?php echo $this->escapeHtml($libros->libro_nombre);?>"</h1> <p style="display:inline-block;">por: <?php echo $this->escapeHtml($libros->aut_nombre);?></p>
+            </div>
+            <div class="row">
+            	<div class="col-md-8" style="">
+            		<div class="inline-block">
+                		<p><b> Autor: </b><?php echo $this->escapeHtml($libros->aut_nombre);?></p>
+                		<p><b> Editor: </b><?php echo $this->escapeHtml($libros->edit_nombre);?></p>              
+                		<p><b> Catedra: </b> <?php echo $this->escapeHtml($libros->catedra_nombre);?></p>
+                		<p><b> Fecha de registro: </b> <?php echo $this->escapeHtml($libros->fecha_creacion);?></p>
+                		<p><b> Cantidad: </b> <?php echo $this->escapeHtml($libros->cantidad);?></p>
+                		<p><b> Codigo de barra: </b> <?php echo $this->escapeHtml($libros->libro_bar_id);?></p>
+                		<p><b> Reseña: </b> <?php echo $libros->resena;?></p>
+            		</div>
+        		</div>
+        		<div class="col-md-4" style="">
+        			<a href="#" class="thumbnail">
+      					<img src="<?php echo $this->basePath('img/').$libros->image_path; ?>" alt="<?php echo $this->escapeHtml($libros->libro_nombre);?>">
+    				</a>
+        		</div>
+        		
+        	</div>
+        	<h4><a href="<?php echo $this->basePath('/libro')?>"> <span class="glyphicon glyphicon-th-list"></span> Lista de Libros</h4>
+		</div>
+   </div>

@@ -1,0 +1,42 @@
+<div class="row" ng-controller="listController as listCtrl">
+        <div class="col-md-offset-1 col-md-10" style="">                
+            <div class="jumbotron">
+                <h1>Libros por Autor:</h1>
+            Buscar: <input ng-model="query">
+			Ordenar por:
+			<select ng-model="orderProp">
+			  <option value="libro_nombre">Alphabetical</option>
+			  <option value="libro_bar_id">Codigo</option>
+			  <option value="aut_nombre">Autor</option>
+			  <option value="catedra_nombre">Catedra</option>
+			</select>
+            </div>
+           
+            <table class="table table-hover">
+			 <tr>
+			     <th>#</th>
+			     <th>Nombre</th>
+			     <th>Autor</th>
+			     <th>Editar</th>
+			     <th>Catedra</th>
+			     <th>Eliminar</th>
+			 </tr>
+			
+			 <tr ng-repeat="libro in libros | filter:query | orderBy:orderProp">
+			     <td>{{libro.libro_bar_id}}</td>
+			     <td>{{libro.libro_nombre}}</td>
+			     <td>{{libro.aut_nombre}}</td>
+			     <td>{{libro.catedra_nombre}}</td>
+			    <td>
+			        <a href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+			        </a>
+			    </td>
+			    <td>
+			     	<a href=""><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+			        </a>
+			    </td>
+			 </tr>
+			
+			 </table>
+        </div>
+    </div>

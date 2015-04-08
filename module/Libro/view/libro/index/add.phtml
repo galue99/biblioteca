@@ -1,0 +1,152 @@
+
+<script src="<?php echo $this->basePath('/js/ckeditor/ckeditor.js') ?>"></script>
+<script type="text/javascript" src="<?php echo $this->basePath('/js/jquery.validate.js') ?>"></script>
+<script type="text/javascript" src="<?php echo $this->basePath('/js/messages_es.js') ?>"></script>
+<script type="text/javascript" src="<?php echo $this->basePath('/js/libroForm.js') ?>"></script>
+<script type="text/javascript" src="<?php echo $this->basePath('/js/jquery-ui-1.11.3.custom/jquery-ui.min.js') ?>"></script>
+<link rel="stylesheet" href="<?php echo $this->basePath('/js/jquery-ui-1.11.3.custom/jquery-ui.theme.min.css') ?>">
+ <script>
+$(function() {
+	$( "#fecha_creacion" ).datepicker();
+	$( "#fecha_creacion" ).datepicker( "option", "dateFormat", 'yy-mm-dd' );
+	
+});
+</script>
+
+<div class="row">
+        <div class="col-md-12" style="">                
+            <div class="jumbotron">
+                <h1>Añade un nuevo libro:</h1>
+                <p>Aqui podras añadir nuevos libros a la biblioteca</p>
+            </div>
+            <div class="row">
+            	
+         	<div class="col-md-offset-3 col-md-6">
+         		<?php
+ 					$form->setAttribute('action', $this->url('libro', array('action' => 'add')));
+ 					$form->setAttribute('class', 'form-horizontal');
+ 					$form->setAttribute('style', 'border:1px solid #ccc; padding:15px;');
+ 					$form->setAttribute('name', 'libroForm');
+
+ 					$form->prepare();
+
+					echo $this->form()->openTag($form);
+
+					echo "<div class='form-group'>";
+						echo "<label for='libro_bar_id' class='col-sm-3 control-label'><span>ID barra: </span></label>";
+						echo '<div class="col-sm-6">';
+
+							echo $this->formRow($form->get('libro_bar_id')->setAttribute('class', 'form-control')->setAttribute('id', 'libro_bar_id')->setAttribute('readonly',true)->setAttribute('value', ''.rand(1111,9999).rand(1111,9999).'' ));
+
+						echo "</div>";
+					echo "</div>";
+
+					echo "<div class='form-group'>";
+						echo "<label for='libro_id' class='col-sm-3 control-label'><span>ID libro: </span></label>";
+						echo '<div class="col-sm-6">';
+
+							echo $this->formRow($form->get('libro_id')->setAttribute('class', 'form-control')->setAttribute('placeholder', '#')->setAttribute('id', 'libro_id'));
+
+						echo "</div>";
+					echo "</div>";
+
+					echo "<div class='form-group'>";
+						echo "<label for='libro_nombre' class='col-sm-3 control-label'><span>Nombre: </span></label>";
+							echo '<div class="col-sm-6">';
+
+								echo $this->formRow($form->get('libro_nombre')->setAttribute('class', 'form-control')->setAttribute('placeholder', 'NOMBRE')->setAttribute('id', 'libro_nombre'));
+
+							echo "</div>";
+						echo "</div>";
+
+					echo "<div class='form-group'>";
+						echo "<label for='aut_nombre' class='col-sm-3 control-label'><span>Autor: </span></label>";
+						echo '<div class="col-sm-6">';
+
+							echo $this->formRow($form->get('aut_nombre')->setAttribute('class', 'form-control')->setAttribute('placeholder', 'AUTOR')->setAttribute('id', 'aut_nombre'));
+
+						echo "</div>";
+					echo "</div>";
+					
+
+					echo "<div class='form-group'>";
+						echo "<label for='edit_nombre' class='col-sm-3 control-label'><span>Editorial: </span></label>";
+						echo '<div class="col-sm-6">';
+
+							echo $this->formRow($form->get('edit_nombre')->setAttribute('class', 'form-control')->setAttribute('placeholder', 'EDITORIAL')->setAttribute('id', 'edit_nombre'));
+
+						echo "</div>";
+					echo "</div>";
+
+
+					echo "<div class='form-group'>";
+						echo "<label for='catedra_nombre' class='col-sm-3 control-label'><span>Catedra: </span></label>";
+						echo '<div class="col-sm-6">';
+
+							echo $this->formRow($form->get('catedra_nombre')->setAttribute('class', 'form-control')->setAttribute('placeholder', 'CATEDRA')->setAttribute('id', 'catedra_nombre'));
+
+						echo "</div>";
+					echo "</div>";
+
+					
+					echo "<div class='form-group'>";
+						echo "<label for='fecha_creacion' class='col-sm-3 control-label'><span>Fecha de creacion: </span></label>";
+						echo '<div class="col-sm-6">';
+
+							echo $this->formRow($form->get('fecha_creacion')->setAttribute('class', 'form-control')->setAttribute('placeholder', 'YYYY/MM/DD')->setAttribute('id', 'fecha_creacion'));
+
+						echo "</div>";
+					echo "</div>";
+
+
+					echo "<div class='form-group'>";
+						echo "<label for='cantidad' class='col-sm-3 control-label'><span>Cantidad: </span></label>";
+						echo '<div class="col-sm-4">';
+
+							echo $this->formRow($form->get('cantidad')->setAttribute('class', 'form-control')->setAttribute('placeholder', '#')->setAttribute('id', 'cantidad'));
+
+						echo "</div>";
+					echo "</div>";
+
+
+					echo "<div class='form-group'>";
+						echo "<label for='image_path' class='col-sm-3 control-label'><span>Imagen: </span></label>";
+						echo '<div class="col-sm-6">';
+
+							echo $this->formRow($form->get('image_path')->setAttribute('class', 'form-control')->setAttribute('placeholder', 'IMAGEN')->setAttribute('id', 'image_path'));
+
+						echo "</div>";
+					echo "</div>";
+
+
+					echo "<div class='form-group'>";
+						echo "<label for='reseña' class='col-sm-3 control-label'><span>Reseña: </span></label>";
+						echo '<div class="col-sm-8">';
+
+							echo $this->formRow($form->get('resena')->setAttribute('class', 'form-control')->setAttribute('id', 'resena'));
+
+						echo "</div>";
+					echo "</div>";
+
+
+
+					echo "<div class='form-group'>";
+						echo "<div class='col-sm-offset-3 col-sm-9'>";
+
+							echo $this->formSubmit($form->get('submit')->setAttribute('value', 'Añadir Libro'));
+
+						echo "</div>";
+					echo "</div>";
+
+					echo $this->form()->closeTag();
+                
+                ?>
+
+                 	<script>
+                		CKEDITOR.replace( 'resena' );
+           			</script>
+                
+         	</div>
+         </div>
+        </div>
+    </div>

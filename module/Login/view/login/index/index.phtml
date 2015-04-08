@@ -1,0 +1,77 @@
+
+<script type="text/javascript" src="<?php echo $this->basePath('/js/messages_es.js') ?>"></script>
+
+<div class="row">
+        <div class="col-md-12" style="">                
+            <div class="container">
+
+                 <div class="banner"><h1>Biblioteca Maria Quesada</h1></div>
+
+                <div class="row">
+                    <div class="col-sm-5 col-md-4 col-md-offset-4 col-sm-offset-4">
+                    <h1 class="text-center login-title account-wall-header" id="test">
+                        Inicia sesión para acceder a la biblioteca
+                    </h1>
+
+                        <div class="account-wall">
+                            <div class="center"><div id="msgbox"></div></div>
+                            
+                            <form id="loginform" class="form-signin" action="" method="post">
+
+                            <input type="text" class="form-control" placeholder="Email" autofocus name="emailLogin" id="emailLogin">
+
+                            <input type="password" class="form-control" placeholder="Password" name="passwordLogin" id="passwordLogin">                                                           
+                            <button class="btn btn-lg btn-primary center-block" type="submit" value="login" name="login">Entrar</button>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script type="text/javascript">
+
+    $('#loginform').submit(function(e){
+
+
+                if($('#emailLogin').val()==0 || $('#passwordLogin').val()==0){
+
+                     $("#msgbox").text('Debes rellenar todos los campos').addClass('alert alert-danger').fadeIn(1000);
+
+                }else{
+
+
+                    $("#msgbox").text('Validando...').removeClass().addClass('alert alert-success').fadeIn(1000);
+
+                $.post("<?php echo $this->basePath('js/ajax/ajax_auth.php') ?>",{ emailLogin:$('#emailLogin').val(),passwordLogin:$('#passwordLogin').val(),rand:Math.random() } ,function(data)
+                {
+                      if(data=='yes') 
+                      {
+                            $("#msgbox").fadeTo(200,0.1,function() 
+                            {
+                              //add message and change the class of the box and start fading
+                              $(this).html('Accediendo...').addClass('alert alert-success').fadeTo(900,1,
+                              function()
+                              {
+                                                                  
+                                 window.location.href = "<?php echo $this->basepath(''); ?>";
+                              });
+                            });
+                      }
+                      else
+                      {
+                            $("#msgbox").fadeTo(200,0.1,function() 
+                            {
+
+                              $(this).html('El email o la contraseña son incorrectos.').addClass('alert alert-danger').fadeTo(900,1);
+                              $('#passwordLogin').val('');
+                            });
+                      }
+                });
+
+         }
+                return false;
+              });
+</script>
