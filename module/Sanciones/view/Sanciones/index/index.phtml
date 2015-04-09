@@ -1,0 +1,37 @@
+<div class="row">
+        <div class="col-md-offset-1 col-md-10" style="">                
+            <div class="jumbotron">
+                <h1>Lista de Sanciones:</h1>
+                <p>Aqui podras visualizar todos los sanciones ocurridas en la biblioteca</p>
+                <p><a class="btn btn-primary btn-lg" href="<?php echo $this->basePath('/sanciones/add') ?>" role="button">Nueva sancion</a></p>
+            </div>
+
+            <table class="table table-hover">
+			 <tr>
+			     <th># Sanción</th>
+			     <th># Préstamo</th>
+			     <th># Usuario</th>
+			     <th># Días</th>
+			     <th>Estatus</th>
+			 </tr>
+			 <?php foreach ($sanciones as $sancion) : ?>
+			 <tr>
+			     <td><?php echo $this->escapeHtml($sancion->sanc_id);?></td>
+			     <td>
+
+			     	<a href="<?php echo $this->url('prestamos',
+			            array('action'=>'index'));?>">
+			            <?php echo $this->escapeHtml($sancion->prest_id);?>
+			        </a>
+
+			     </td>
+			     <td><?php echo $this->escapeHtml($sancion->user_id);?></td>
+			     <td><?php echo $this->escapeHtml($sancion->sanc_dias);?></td>
+			     <td><?php echo $this->escapeHtml($sancion->sanc_estado);?></td>
+
+			    
+			 </tr>
+			 <?php endforeach; ?>
+			 </table>
+        </div>
+    </div>

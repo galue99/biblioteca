@@ -1,0 +1,21 @@
+<div class="row" ng-controller="listController as listCtrl">
+        <div class="col-md-offset-1 col-md-10" style="">                
+            <div class="jumbotron">
+                <h1>Libros por Codigo:</h1>
+
+            Buscar: <input ng-model="query.libro_bar_id" ng-maxlength="12" placeholder="#"> <span class="glyphicon glyphicon-user" ></span>
+
+            </div>           
+            <table class="table table-hover">
+			 <tr>
+			 	 <th>#</th>
+			     <th>Libro <span class="glyphicon glyphicon-book"></span></th>
+			 </tr>			
+			 <tr ng-repeat="libro in libros | filter:query | orderBy:libroid">
+			 	<td>{{libro.libro_bar_id}}</td>
+			    <td><a href="<?php echo $this->basePath('/libro/details/{{libro.libro_bar_id}}') ?>">{{libro.libro_nombre}}</a></td>			     
+			   
+			 </tr>
+			 </table>
+        </div>
+    </div>
