@@ -1,0 +1,56 @@
+<?php echo $this->doctype(); ?>
+
+<html lang="es_ES">
+    <head>
+        <meta charset="utf-8">
+
+        <?php echo $this->headTitle("Biblioteca Universal")?>
+
+        <?php echo $this->headMeta()
+                     ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+                     ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+        ?>
+
+          <!-- styles -->
+
+        <?php echo $this->headLink()->prependStylesheet($this->basePath() . '/css/biblioteca-style.css')
+                                    ->prependStylesheet($this->basePath() . '/css/bootstrap.min.css')
+                                    ->prependStylesheet($this->basePath() . '/css/formStyle.css')
+                                    ;
+        ?>
+
+        <?php echo $this->headScript()
+                                ->prependFile($this->basePath() . '/js/bootstrap.min.js')
+                                ->prependFile($this->basePath() . '/js/loginForm1.js')
+                                ->prependFile($this->basePath() . '/js/jquery.validate.min.js')
+                                ->prependFile($this->basePath() . '/js/jquery.min.js')
+                              ;
+        ?>
+
+    </head>
+
+   
+<body style="background-image: url('img/escudoLogin.png'); background-repeat:no-repeat;">
+<div class="wraper">
+
+  <div id="container-fluid">
+
+      <?php echo $this->content; ?>
+     
+  </div>
+
+  <?php echo $this->inlineScript() ?>
+
+</div>
+
+  <footer class="admin-footer" style="margin-top:250px;">
+
+    <p>Creado desde el año 2015 - @Copyright 2015 - <?php echo date('Y') ?></p>
+
+  </footer>
+
+  </div>
+
+</body>
+
+</html>

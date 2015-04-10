@@ -1,0 +1,98 @@
+        body {
+            margin:0;
+            padding:0;
+            height:100%;
+            }
+
+        .divisor{
+            border-bottom: 2px solid #eee;
+            padding: 5px;
+        }
+
+        .admin-footer{
+            padding: 40px 0px;
+            height: 150px;
+            position: absolute;
+            width:100%;
+            color: #999;
+            text-align: center;
+            background-color: #F9F9F9;
+            border-top: 1px solid #E5E5E5;
+            color: #999;
+            text-align: center;
+        }
+
+        p {
+             margin: 0px 0px 10px;
+        }
+
+        #wraper {
+                min-height:100%;
+                position:relative;
+                }
+
+
+        .navbar .navbar-nav {
+            margin: 0px;
+            background-color: #337AB7;
+
+        }
+      
+        .navbar .navbar-collapse {
+        text-align: center;
+
+        }
+        .navbar-default .navbar-nav>li>a{
+            color: white;
+        }
+        .navbar-default .navbar-nav>li>a:hover{
+            color: white;
+            border-left:  #eee solid;
+            border-right:  #eee solid;
+
+        }
+
+        .navbar-default .navbar-nav>li>a:focus{
+            color: white;
+
+        }
+
+        .navbar-default .navbar-nav>li>a:active,a:visited{
+            
+
+        }
+
+        .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus{
+
+            color: white;
+            background-color:#1D8FD1;
+            border-left:  #eee solid;
+            border-right:  #eee solid;
+
+        }
+
+        
+        .navbar-nav>li>a{
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+
+        .navbar-default .navbar-brand {
+            color: #fff;
+
+        }
+
+        .navbar-default .navbar-brand:hover, .navbar-brand:active {
+            color: #fff;
+            font-size: 20px;
+
+        }
+
+        .inline-block{
+
+            padding-left: 20px;
+            padding-top: 25px;
+            text-align: justify;
+        }
+
+       

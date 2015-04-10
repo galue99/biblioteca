@@ -1,0 +1,30 @@
+<div class="row">
+        <div class="col-md-12" style="">                
+            <div class="jumbotron">
+                  <h2>¿Estas seguro de eliminar este Editor?</h2>
+                <p>Editor #<?php echo $this->escapeHtml($this->edit_id); ?>
+     			</p>
+     			<p>Nombre: <?php echo $this->escapeHtml($editor->edit_nombre); ?>. 
+</p>
+
+     			<?php 
+
+				 	$url = $this->url('editor', array(
+				    'action' => 'delete',
+				    'id'     => $this->edit_id,
+				 	));
+
+     			 ?>
+
+     			<form action="<?php echo $url; ?>" method="post">
+				 	<div>
+				     	<input type="hidden" name="id" value="<?php echo (int) $editor->edit_id; ?>" />
+				     	<input type="submit" class="btn btn-primary" name="del" value="Eliminar" />
+				     	<input type="submit" class="btn btn-default" name="del" value="Cancelar" />
+				 	</div>
+				</form>
+
+               
+            </div>
+        </div>
+    </div>
