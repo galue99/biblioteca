@@ -1,0 +1,59 @@
+@extends ('layouts')
+
+@section ('content')
+	
+	<div class="spacing">
+
+		<h2>Prestamo</h2>
+		
+		{{ Form::open(array('url' => 'book', 'files' => true, 'method' => 'POST'), array('role' => 'form')) }}
+
+		  <div class="row">
+		    <div class="form-group col-md-4">
+		      {{ Form::label('cota', 'Cota') }}
+		      {{ Form::text('cota', null, array('placeholder' => 'Ingrese la Cota', 'class' => 'form-control')) }}
+		    </div>
+		    <div class="form-group col-md-4">
+		      {{ Form::label('isbn', 'Isbn') }}
+		      {{ Form::text('isbn', null, array('placeholder' => 'Ingrese el ISBN', 'class' => 'form-control')) }}
+		    </div>
+		    <div class="form-group col-md-4">
+		      {{ Form::label('titulo', 'Titulo') }}
+		      {{ Form::text('titulo', null, array('placeholder' => 'Titulo', 'class' => 'form-control')) }}
+		    </div>
+		  </div>
+		  <div class="row">
+		    <div class="form-group col-md-4">
+		      {{ Form::label('email', 'Dirección de E-mail') }}
+		      {{ Form::text('cota', null, array('placeholder' => '#', 'class' => 'form-control')) }}
+		    </div>
+		    <div class="form-group col-md-4">
+		      {{ Form::label('email', 'Dirección de E-mail') }}
+		      {{ Form::text('author', null, array('placeholder' => '#', 'class' => 'form-control')) }}
+		    </div>
+		    <div class="form-group col-md-4">
+		      {{ Form::label('email', 'Dirección de E-mail') }}
+		      {{ Form::text('tematica', null, array('placeholder' => '#', 'class' => 'form-control')) }}
+		    </div>
+		  </div>
+		  <div class="row">
+		    <div class="form-group col-md-4">
+		      {{ Form::label('fecha_prestamo', 'Fecha del Prestamo') }}
+		      {{ Form::text('ubicacion', null, array('placeholder' => '#', 'class' => 'form-control')) }}
+		    </div>
+		    <div class="form-group col-md-4">
+		      {{ Form::label('cover', 'Fecha de Entrega') }}
+		      {{ Form::text('fecha_entrega', null, array('placeholder' => 'Fecha de Entrega', 'class' => 'form-control')) }}
+		    </div>
+		    <div class="form-group col-md-4">
+		      {{ Form::label('email', 'Dirección de E-mail') }}
+		      {{ Form::text('disponibilidad', null, array('placeholder' => '#', 'class' => 'form-control')) }}
+		    </div>
+		  </div>
+		  {{ Form::button('Guardar', array('type' => 'submit', 'class' => 'btn btn-primary')) }}    
+		  
+		{{ Form::close() }}
+	</div>
+	
+
+@stop

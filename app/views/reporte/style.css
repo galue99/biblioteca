@@ -1,0 +1,40 @@
+body{
+	width:100%;
+}
+.azul_claro{color:#0093d9;}
+.azul_medio{color:#0064ad;}
+.azul_oscuro{color:#0a4396;}
+.gris{color:#999999;}
+.rojo{color:#cc0000;}
+.body{background-image: url('../img/fondo.jpg');width:100%;height:100%;}
+.headers{margin-top: 50px;}
+.login{background: white; height: 40%}
+.label{color: white;font-size: 14px;}
+
+.spacing{
+    padding-top: 15px;
+    margin-top: 15px;
+}
+.form-login {
+    background-color: white;
+    margin-top: 13px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 15px;
+    border-color:#d2d2d2;
+    border-width: 5px;
+    box-shadow:0 1px 0 #cfcfcf;
+}
+
+.form-control {
+    border-radius: 5px;
+}
+
+.footer{
+	padding-top: 15px;
+	color: gray;
+	font-size: 16px;
+	font-family: arial;
+}
